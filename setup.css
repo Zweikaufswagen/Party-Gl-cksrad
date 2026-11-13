@@ -1,0 +1,86 @@
+.setup-shell { max-width: 1130px; }
+.studio-intro { padding: 54px 0 30px; }
+.studio-intro h1 { font-size: 62px; letter-spacing: -3px; }
+.studio-intro > p { color: var(--muted); max-width: 600px; font-size: 15px; line-height: 1.8; }
+.studio-notice { padding: 22px 25px; background: #24252d; border: 1px solid #45414f; border-left: 3px solid var(--lavender); border-radius: 14px; }
+.studio-notice strong { font-size: 13px; }
+.studio-notice p { font-size: 12px; color: #bcbcc6; line-height: 1.8; margin: 8px 0 0; }
+.studio-section { padding: 42px 0; border-bottom: 1px solid var(--line); }
+.section-heading { display: flex; align-items: center; gap: 20px; justify-content: space-between; margin-bottom: 25px; }
+.section-index { color: var(--lavender); font-size: 9px; letter-spacing: 1.5px; margin: 0 0 9px; }
+.section-heading h2 { font-size: 28px; letter-spacing: -1px; margin: 0; line-height: 1.2; }
+.section-description { color: var(--muted); font-size: 12px; line-height: 1.8; max-width: 620px; margin: 12px 0 0; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 25px; }
+.form-grid > label, .url-label { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: #d5d3dc; }
+input:not([type="checkbox"]), textarea { display: block; width: 100%; border-radius: 10px; border: 1px solid #444550; background: #1b1c22; color: var(--text); padding: 12px 13px; min-height: 46px; resize: vertical; font-size: 14px; line-height: 1.5; }
+input[type="color"] { padding: 6px; cursor: pointer; }
+input[type="checkbox"] { accent-color: var(--accent); width: 18px; height: 18px; }
+small, .field-note { font-size: 11px; color: var(--muted); line-height: 1.8; }
+.wide-field { grid-column: 1 / -1; }
+.checkbox-group { display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.checkbox-label { display: flex; align-items: center; gap: 9px; font-size: 12px; }
+.count-badge { border: 1px solid #4b4658; background: #24222d; padding: 8px 12px; border-radius: 8px; color: var(--lavender); font-size: 11px; white-space: nowrap; }
+.task-editors { display: flex; flex-direction: column; gap: 13px; margin-bottom: 18px; }
+.task-editor { border: 1px solid var(--line); border-radius: 14px; background: #18191f; }
+.task-editor summary { display: flex; align-items: center; gap: 12px; padding: 18px 20px; cursor: pointer; list-style: none; min-height: 66px; }
+.task-editor summary::-webkit-details-marker { display: none; }
+.task-editor summary::after { content: "+"; font-size: 22px; color: var(--muted); }
+.task-editor[open] summary::after { content: "−"; }
+.task-preview-emoji { font-size: 22px; line-height: 1; }
+.task-summary-name { flex: 1; font-size: 15px; overflow-wrap: anywhere; }
+.task-summary-number { color: var(--muted); font-size: 10px; }
+.task-editor-body { padding: 0 20px 24px; }
+.task-tools { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding: 15px 0 20px; gap: 15px; }
+.task-id { color: var(--muted); font-size: 10px; overflow-wrap: anywhere; }
+.task-tools > div { display: flex; gap: 6px; }
+.task-tools button { min-height: 36px; padding: 5px 12px; font-size: 11px; border-radius: 7px; }
+.task-tools button:disabled { opacity: .35; }
+.task-tools .task-delete { color: #ffb48a; }
+.export-bar { display: flex; gap: 24px; align-items: center; justify-content: space-between; padding: 24px; border: 1px solid #4c563c; border-radius: 16px; background: #1d221b; margin: 25px 0 0; }
+.export-bar strong { font-size: 16px; }
+.export-bar p { font-size: 11px; color: var(--muted); margin: 7px 0 0; }
+.qr-layout { display: grid; grid-template-columns: 1fr 265px; gap: 45px; align-items: start; }
+.url-label { margin-bottom: 9px; }
+.field-note { margin: 10px 0 20px; }
+.qr-preview { background: white; color: #777; aspect-ratio: 1; border-radius: 16px; display: grid; place-items: center; padding: 12px; overflow: hidden; }
+.qr-preview > span { text-align: center; font-size: 11px; letter-spacing: 1.5px; line-height: 1.8; }
+.qr-preview svg { width: 100%; height: 100%; display: block; }
+.qr-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.qr-actions button { font-size: 12px; }
+.inline-error { color: #ffb48a; font-size: 12px; line-height: 1.7; }
+@media (max-width: 760px) {
+  .setup-shell .site-header { gap: 10px; }
+  .setup-shell .brand { font-size: 16px; gap: 8px; }
+  .setup-shell .site-header > a.secondary-button { min-height: 38px; padding: 8px 10px; font-size: 10px; white-space: nowrap; }
+  .setup-shell .brand-mark { width: 24px; height: 24px; }
+  .studio-intro { padding-top: 34px; }
+  .studio-intro h1 { font-size: 48px; }
+  .studio-intro > p { font-size: 13px; }
+  .studio-notice { padding: 18px; }
+  .form-grid { grid-template-columns: 1fr; gap: 17px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { font-size: 25px; }
+  .count-badge { font-size: 9px; padding: 6px 8px; }
+  .task-editor summary { padding: 15px; }
+  .task-summary-name { font-size: 13px; }
+  .task-editor-body { padding: 0 15px 20px; }
+  .task-summary-number { display: none; }
+  .export-bar { flex-direction: column; align-items: stretch; }
+  .export-bar .primary-button { width: 100%; }
+  .qr-layout { grid-template-columns: 1fr; gap: 24px; }
+  .qr-preview { max-width: 300px; width: 100%; margin: 0 auto; }
+  .qr-actions { flex-direction: column; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 15mm; }
+  .setup-shell, #toast { display: none !important; }
+  #posterSheet { display: flex !important; flex-direction: column; align-items: center; text-align: center; color: #17181e; width: 100%; padding: 4mm 0; break-inside: avoid; }
+  .poster-brand { font-weight: 800; font-size: 20pt; letter-spacing: -1px; border-bottom: 1pt solid #17181e; padding-bottom: 6mm; width: 100%; overflow-wrap: anywhere; }
+  .poster-eyebrow { font-size: 8pt; letter-spacing: 1.5px; margin: 9mm 0 5mm; }
+  #posterSheet h1 { font-size: 49pt; letter-spacing: -3px; line-height: .98; margin: 0 0 8mm; }
+  #posterQr { width: 76mm; height: 76mm; }
+  #posterQr svg { width: 100%; height: 100%; }
+  .poster-rule { font-size: 13pt; font-weight: 700; margin: 6mm 0 3mm; }
+  .poster-url { font-size: 8pt; margin: 0 0 5mm; overflow-wrap: anywhere; max-width: 160mm; }
+  .poster-small { font-size: 9pt; line-height: 1.6; margin: 0; }
+}

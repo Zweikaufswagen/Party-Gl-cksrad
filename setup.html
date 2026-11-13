@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121318"><meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer"><title>Party-Studio · Konfiguration & QR-Code</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="setup.css">
+  <script defer src="config.js"></script><script defer src="core.js"></script>
+  <script defer src="vendor/qr.js"></script><script defer src="setup.js"></script>
+</head>
+<body class="setup-body">
+  <div class="page-shell setup-shell">
+    <header class="site-header"><a class="brand" href="./"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 1l4 11 10-6-5 11 11 3-11 4 5 10-11-5-3 11-4-11-10 5 5-11L0 20l11-4L6 6l11 6z" fill="currentColor"/></svg><span>PARTY STUDIO</span></a><a class="secondary-button" href="./">Zur Gästeseite ↗</a></header>
+    <main>
+      <section class="studio-intro"><div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> FÜR DIE GASTGEBER</div><h1>Deine Party.<br><span>Deine Regeln.</span></h1><p>Aufgaben bearbeiten, Konfiguration exportieren und den QR-Code für deine Gäste erstellen. Alles direkt im Browser.</p></section>
+      <div class="studio-notice"><strong>Wichtig: Dieser Editor verändert die veröffentlichte Website nicht automatisch.</strong><p>Nach dem Bearbeiten <b>config.js herunterladen</b>, die bisherige Datei ersetzen und die App erneut hochladen. Der Editor hat keine Serverrechte und ist kein geschützter Adminbereich. Ungesicherte Änderungen gehen beim Neuladen verloren.</p></div>
+      <div id="setupError" class="error-card" role="alert" hidden></div>
+      <form id="configForm">
+        <section class="studio-section" aria-labelledby="basicsTitle"><div class="section-heading"><div><p class="section-index">01 / DER RAHMEN</p><h2 id="basicsTitle">Mach sie zu deiner Party.</h2></div></div>
+          <div class="form-grid">
+            <label>Partyname<input id="cfgName" maxlength="60" required></label>
+            <label>Party-ID<input id="cfgPartyId" maxlength="80" pattern="[a-zA-Z0-9_\-]+" required spellcheck="false"><small>Vor der echten Party neu vergeben. Danach nicht ändern, sonst werden alle Browser wieder freigeschaltet.</small></label>
+            <label>Untertitel<input id="cfgEdition" maxlength="80" required></label>
+            <label>Akzentfarbe<input id="cfgAccent" type="color"></label>
+            <label>Überschrift (Zeilenumbruch erlaubt)<textarea id="cfgHeadline" rows="2" maxlength="120" required></textarea></label>
+            <label>Einleitung<textarea id="cfgIntro" rows="3" maxlength="400" required></textarea></label>
+            <label class="wide-field">Hinweis am Seitenende<textarea id="cfgFooter" rows="2" maxlength="400" required></textarea></label>
+            <label>Drehdauer in Millisekunden<input id="cfgDuration" type="number" min="2000" max="12000" step="1" required></label>
+            <div class="checkbox-group"><label class="checkbox-label"><input id="cfgConfetti" type="checkbox"> Konfetti bei der Auflösung</label><label class="checkbox-label"><input id="cfgCompletion" type="checkbox"> „Mission erledigt“-Button anzeigen</label></div>
+          </div>
+        </section>
+        <section class="studio-section" aria-labelledby="tasksTitle"><div class="section-heading"><div><p class="section-index">02 / DIE MISSIONEN</p><h2 id="tasksTitle">Was hat der Abend vor?</h2><p class="section-description">2 bis 24 Aufgaben. Alle sind gleich wahrscheinlich. Mehrere Gäste können dieselbe Aufgabe ziehen.</p></div><span id="editorTaskCount" class="count-badge">12 Aufgaben</span></div><div id="taskEditors" class="task-editors"></div><button class="secondary-button" type="button" id="addTask">＋ Aufgabe hinzufügen</button></section>
+        <div class="export-bar"><div><strong>Bereit für deine Gäste?</strong><p>Exportieren → config.js ersetzen → veröffentlichen.</p></div><button type="submit" class="primary-button" id="exportConfig">config.js herunterladen ↓</button></div>
+      </form>
+      <section class="studio-section qr-section" aria-labelledby="qrTitle"><div class="section-heading"><div><p class="section-index">03 / DER WEG ZUR PARTY</p><h2 id="qrTitle">Ein Scan. Ein guter Abend.</h2><p class="section-description">Erst die App veröffentlichen, dann ihre vollständige Adresse eintragen. Alle Aushänge können denselben QR-Code verwenden.</p></div></div>
+        <div class="qr-layout"><div><label class="url-label" for="siteUrl">Öffentliche Adresse der Gästeseite</label><input id="siteUrl" type="url" placeholder="https://dein-name.github.io/party/" spellcheck="false" maxlength="1200"><p class="field-note">Kein Dateipfad und nicht die Adresse dieses Editors. Nutze auf der Party möglichst HTTPS. Eine localhost-Adresse funktioniert nicht auf den Handys deiner Gäste.</p><button class="primary-button" type="button" id="generateQr">QR-Code erstellen ↗</button><p id="qrError" class="inline-error" role="alert" hidden></p><div class="qr-actions" id="qrActions" hidden><button class="secondary-button" type="button" id="downloadQr">QR-Code als SVG ↓</button><button class="secondary-button" type="button" id="printPoster">Aushang drucken ↗</button></div><p id="qrLocalWarning" class="field-note" hidden></p></div><div id="qrPreview" class="qr-preview"><span>DEIN QR-CODE<br>WARTET HIER.</span></div></div>
+      </section>
+    </main>
+    <footer class="site-footer"><p>Kein Backend. Keine Anmeldung. Keine externen Schriften oder QR-Dienste.</p><a href="./" class="text-button">Zur Gästeseite ↗</a></footer>
+  </div>
+  <section id="posterSheet" aria-label="Druckvorlage für die Party" hidden><div class="poster-brand" id="posterBrand">AFTER HOURS</div><p class="poster-eyebrow">DEIN ABEND BRAUCHT EINE MISSION.</p><h1>Scannen.<br>Drehen.<br>Loslegen.</h1><div id="posterQr"></div><p class="poster-rule">Ein Dreh. Eine Aufgabe. Deine Geschichte.</p><p class="poster-url" id="posterUrl"></p><p class="poster-small">Kamera öffnen & QR-Code scannen.<br>Keine Anmeldung nötig. Mitmachen ist freiwillig.</p></section>
+  <template id="taskTemplate"><details class="task-editor" open><summary><span class="task-preview-emoji" aria-hidden="true"></span><span class="task-summary-name"></span><span class="task-summary-number"></span></summary><div class="task-editor-body"><div class="task-tools"><code class="task-id"></code><div><button type="button" class="task-up secondary-button" title="Nach oben">↑</button><button type="button" class="task-down secondary-button" title="Nach unten">↓</button><button type="button" class="task-delete secondary-button">Entfernen</button></div></div><div class="form-grid task-fields"><label>Kurzer Name auf dem Rad<input data-field="label" maxlength="22" required></label><label>Emoji<input data-field="emoji" maxlength="16" required></label><label>Kategorie<input data-field="category" maxlength="40" required></label><label>Segmentfarbe<input data-field="color" type="color"></label><label class="wide-field">Titel der Aufgabe<input data-field="title" maxlength="100" required></label><label class="wide-field">Aufgabentext<textarea data-field="description" rows="3" maxlength="1200" required></textarea></label></div></div></details></template>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

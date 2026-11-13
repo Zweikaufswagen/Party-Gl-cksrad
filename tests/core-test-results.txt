@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: default config: 12 tasks, normalized config
+ok 1 - default config: 12 tasks, normalized config
+  ---
+  duration_ms: 2.363686
+  type: 'test'
+  ...
+# Subtest: configuration rejects missing/oversized task arrays
+ok 2 - configuration rejects missing/oversized task arrays
+  ---
+  duration_ms: 1.391223
+  type: 'test'
+  ...
+# Subtest: duplicate IDs are rejected
+ok 3 - duplicate IDs are rejected
+  ---
+  duration_ms: 0.322368
+  type: 'test'
+  ...
+# Subtest: dangerous/invalid CSS colors are rejected
+ok 4 - dangerous/invalid CSS colors are rejected
+  ---
+  duration_ms: 0.274159
+  type: 'test'
+  ...
+# Subtest: invalid settings are rejected
+ok 5 - invalid settings are rejected
+  ---
+  duration_ms: 1.994134
+  type: 'test'
+  ...
+# Subtest: one draw is persisted before returning
+ok 6 - one draw is persisted before returning
+  ---
+  duration_ms: 4.08158
+  type: 'test'
+  ...
+# Subtest: repeat draw / reload returns same result and does not write
+ok 7 - repeat draw / reload returns same result and does not write
+  ---
+  duration_ms: 1.51494
+  type: 'test'
+  ...
+# Subtest: draw snapshot survives edited/deleted/reordered task definitions
+ok 8 - draw snapshot survives edited/deleted/reordered task definitions
+  ---
+  duration_ms: 0.448305
+  type: 'test'
+  ...
+# Subtest: completion survives a new read
+ok 9 - completion survives a new read
+  ---
+  duration_ms: 0.639542
+  type: 'test'
+  ...
+# Subtest: new party ID starts a separate draw without erasing old party
+ok 10 - new party ID starts a separate draw without erasing old party
+  ---
+  duration_ms: 0.737064
+  type: 'test'
+  ...
+# Subtest: malformed saved data fail closed without replacement
+ok 11 - malformed saved data fail closed without replacement
+  ---
+  duration_ms: 1.826308
+  type: 'test'
+  ...
+# Subtest: invalid snapshot metadata and layout fail closed
+ok 12 - invalid snapshot metadata and layout fail closed
+  ---
+  duration_ms: 0.440759
+  type: 'test'
+  ...
+# Subtest: blocked storage reads report controlled error
+ok 13 - blocked storage reads report controlled error
+  ---
+  duration_ms: 1.873177
+  type: 'test'
+  ...
+# Subtest: blocked or full storage writes do not return a result
+ok 14 - blocked or full storage writes do not return a result
+  ---
+  duration_ms: 0.267048
+  type: 'test'
+  ...
+# Subtest: silent write failures are detected by read-back
+ok 15 - silent write failures are detected by read-back
+  ---
+  duration_ms: 0.2645
+  type: 'test'
+  ...
+# Subtest: storage probe removes its own key and preserves other data
+ok 16 - storage probe removes its own key and preserves other data
+  ---
+  duration_ms: 0.145332
+  type: 'test'
+  ...
+# Subtest: random sampler rejects upper incomplete bucket
+ok 17 - random sampler rejects upper incomplete bucket
+  ---
+  duration_ms: 0.105
+  type: 'test'
+  ...
+# Subtest: random sampler rejects unsupported sources and invalid ranges
+ok 18 - random sampler rejects unsupported sources and invalid ranges
+  ---
+  duration_ms: 0.080356
+  type: 'test'
+  ...
+# Subtest: pointer lands on the selected segment for all supported wheel sizes
+ok 19 - pointer lands on the selected segment for all supported wheel sizes
+  ---
+  duration_ms: 44.122873
+  type: 'test'
+  ...
+# Subtest: exported config is executable and equivalent
+ok 20 - exported config is executable and equivalent
+  ---
+  duration_ms: 0.863129
+  type: 'test'
+  ...
+# Subtest: contrast selection uses readable light/dark foreground
+ok 21 - contrast selection uses readable light/dark foreground
+  ---
+  duration_ms: 0.176782
+  type: 'test'
+  ...
+# Subtest: concurrent callers through serialized lock get only one record
+ok 22 - concurrent callers through serialized lock get only one record
+  ---
+  duration_ms: 0.734944
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.621793

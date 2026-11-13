@@ -1,0 +1,32 @@
+{
+  "browser": "Chromium",
+  "storage": "in-memory test adapter (not real localStorage)",
+  "passed": 25,
+  "checks": [
+    "Desktop ready state and 12 SVG segments",
+    "No horizontal overflow at 320, 360, 390, 768, 1024, 1440 px",
+    "Privacy dialog opens",
+    "Privacy dialog closes with Escape",
+    "Double/multi-click: exactly one draw persisted before animation",
+    "Animation reveals stored task",
+    "Fresh page restores same task; spin controls hidden",
+    "Completion survives a fresh page",
+    "Saved snapshot survives changed config",
+    "Corrupt saved draw fails closed",
+    "Read/write storage failures fail closed",
+    "Different party ID starts separately",
+    "Reduced-motion reveal works",
+    "24-task numbered wheel renders without overflow",
+    "Configured HTML is rendered as text, not markup",
+    "No uncaught JavaScript errors on guest flows",
+    "Editor loads all configured tasks",
+    "Adding and editing updates task summary",
+    "Editor exports valid JavaScript with edited tasks",
+    "QR is generated locally with 4-module quiet zone",
+    "Independent QR decoder returns the exact URL",
+    "QR rejects non-web URL schemes",
+    "Editor mobile layout has no horizontal overflow",
+    "Print stylesheet exposes the QR poster only",
+    "No uncaught JavaScript errors in editor"
+  ]
+}
