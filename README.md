@@ -72,7 +72,7 @@ Die komplette Konfiguration steht in einer gut lesbaren Datei:
 ```javascript
 window.PARTY_CONFIG = {
   partyId: "geburtstag-2026-11",
-  name: "LUCAS PARTY",
+  name: "AFTER HOURS",
   edition: "DIE GEBURTSTAGS-EDITION",
   headline: "Ein Dreh.\nDeine Mission.",
   intro: "Dreh das Rad und finde deine Aufgabe für heute Abend.",
