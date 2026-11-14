@@ -17,11 +17,11 @@ class Storage {
   removeItem(key) { this.data.delete(key); }
 }
 
-test("default config: 12 tasks, normalized config",()=>{
-  const cfg=config(); assert.equal(cfg.tasks.length,12);assert.equal(cfg.partyId,"after-hours-2026-01");
+test("default config: 30 tasks, normalized config",()=>{
+  const cfg=config(); assert.equal(cfg.tasks.length,30);assert.equal(cfg.partyId,"after-hours-2026-01");
 });
 test("configuration rejects missing/oversized task arrays",()=>{
-  for(const count of [0,1,25]) {const cfg=sample();cfg.tasks=Array.from({length:count},(_,i)=>({...cfg.tasks[0],id:`t-${i}`}));assert.throws(()=>C.validateConfig(cfg),{code:"CONFIG"});}
+  for(const count of [0,1,31]) {const cfg=sample();cfg.tasks=Array.from({length:count},(_,i)=>({...cfg.tasks[0],id:`t-${i}`}));assert.throws(()=>C.validateConfig(cfg),{code:"CONFIG"});}
 });
 test("duplicate IDs are rejected",()=>{const cfg=sample();cfg.tasks[1].id=cfg.tasks[0].id;assert.throws(()=>C.validateConfig(cfg),{code:"CONFIG"});});
 test("dangerous/invalid CSS colors are rejected",()=>{const cfg=sample();cfg.tasks[0].color="url(javascript:1)";assert.throws(()=>C.validateConfig(cfg),{code:"CONFIG"});});
@@ -78,8 +78,8 @@ test("random sampler rejects unsupported sources and invalid ranges",()=>{
   assert.throws(()=>C.randomInt(10,null),{code:"RANDOM"});assert.throws(()=>C.randomInt(0,webcrypto),RangeError);
 });
 test("pointer lands on the selected segment for all supported wheel sizes",()=>{
-  for(let count=2;count<=24;count++) {
-    const cfg=config();cfg.tasks=Array.from({length:count},(_,i)=>({...cfg.tasks[i%12],id:`task-${i}`}));
+  for(let count=2;count<=C.MAX_TASKS;count++) {
+    const cfg=config();cfg.tasks=Array.from({length:count},(_,i)=>({...cfg.tasks[i%cfg.tasks.length],id:`task-${i}`}));
     for(let repeat=0;repeat<100;repeat++) {
       const record=C.createRecord(cfg,webcrypto),step=360/count;
       const pointerIndex=Math.floor((((360-record.rotation%360)%360)+step/2)/step)%count;

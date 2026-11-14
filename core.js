@@ -6,7 +6,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
   const PREFIX = "party-wheel:v1:";
-  const MAX_TASKS = 24;
+  const MAX_TASKS = 30;
   const DEFAULT_COLORS = ["#c2afff", "#d4ff7f", "#ffb48a"];
   class PartyError extends Error {
     constructor(code, message) { super(message); this.name = "PartyError"; this.code = code; }

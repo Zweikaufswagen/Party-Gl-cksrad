@@ -35,15 +35,15 @@ window.PARTY_CONFIG = {
       color: "#ffb48a"
     },
     {
-      id: "story", label: "Plot twist", emoji: "🎬", category: "STORY TIME",
-      title: "Erzähl die unwahrscheinlichste Story.",
-      description: "Erzähle jemandem zwei kurze Geschichten über dich: eine wahre und eine erfundene. Lass die Person raten, welche stimmt.",
+      id: "emoji-quiz", label: "Emoji cinema", emoji: "🎬", category: "TEAM CHALLENGE",
+      title: "Ein Film. Fünf Emojis. Wer checkt's?",
+      description: "Stelle einen bekannten Film oder eine Serie mit höchstens fünf Emojis auf deinem Handy dar. Zwei Gäste raten um die Wette. Danach tauscht ihr die Rollen – wer knackt die meisten Titel?",
       color: "#c2afff"
     },
     {
       id: "connection", label: "Small world", emoji: "🤝", category: "CONNECT",
       title: "Finde eure Gemeinsamkeit.",
-      description: "Sprich mit jemandem, den du noch kaum kennst. Findet eine überraschende Gemeinsamkeit – die heutige Party zählt nicht.",
+      description: "Sprich mit jemandem, den du noch kaum kennst. Findet eine überraschende Gemeinsamkeit",
       color: "#d4ff7f"
     },
     {
@@ -53,9 +53,9 @@ window.PARTY_CONFIG = {
       color: "#ffb48a"
     },
     {
-      id: "hype", label: "Hype person", emoji: "📣", category: "GOOD VIBES",
-      title: "Heute bist du der Fanclub.",
-      description: "Frag eine Person nach etwas, auf das sie gerade stolz ist. Feiere ihren Erfolg mit einer kurzen, herrlich übertriebenen Laudatio.",
+      id: "birthday-handshake", label: "Level 18", emoji: "🤜", category: "BIRTHDAY SPECIAL",
+      title: "18 Sekunden für euren geheimen Handshake.",
+      description: "Such dir einen Gast und stellt einen Timer auf 18 Sekunden. Erfindet in dieser Zeit einen Handshake mit drei Moves und einer Siegerpose. Führt ihn danach synchron einer dritten Person vor.",
       color: "#c2afff"
     },
     {
@@ -87,6 +87,115 @@ window.PARTY_CONFIG = {
       title: "Sei der heimliche Party-Held.",
       description: "Tu etwas Kleines, das den Abend für andere besser macht: bring jemandem Wasser, hilf beim Aufräumen oder frag die Gastgeber, was sie brauchen.",
       color: "#ffb48a"
+    },
+    {
+      id: "birthday-countdown", label: "18er-Countdown", emoji: "🎂", category: "BIRTHDAY SPECIAL",
+      title: "Zählt gemeinsam bis 18. Ohne Absprache.",
+      description: "Bildet eine Gruppe aus mindestens vier Gästen. Zählt laut von 1 bis 18, ohne eine Reihenfolge festzulegen. Sprechen zwei gleichzeitig, geht es wieder bei 1 los. Ihr habt drei Versuche!",
+      color: "#c2afff"
+    },
+    {
+      id: "birthday-abc", label: "Birthday ABC", emoji: "🔤", category: "BIRTHDAY SPECIAL",
+      title: "Das Geburtstagskind von A bis Z.",
+      description: "Spielt zu dritt: Nennt reihum ein nettes Wort, ein Hobby oder eine gemeinsame Erinnerung zum Geburtstagskind – erst mit A, dann B, dann C. Wie weit kommt ihr in 60 Sekunden? Bei einem schwierigen Buchstaben dürft ihr einmal passen.",
+      color: "#d4ff7f"
+    },
+    {
+      id: "rock-paper-battle", label: "Mini-Turnier", emoji: "✂️", category: "BATTLE MODE",
+      title: "Vier Gäste. Ein Schere-Stein-Papier-Champion.",
+      description: "Hol drei Gäste dazu und spielt zwei Halbfinals und ein Finale in Schere, Stein, Papier. Pro Duell gewinnt, wer zuerst zweimal siegt. Zum Abschluss erfindet ihr gemeinsam einen absurden Titel für den Champion.",
+      color: "#ffb48a"
+    },
+    {
+      id: "mirror-moves", label: "Spiegelduell", emoji: "🪞", category: "MOVE IT",
+      title: "Sei für 20 Sekunden ein menschlicher Spiegel.",
+      description: "Stellt euch zu zweit gegenüber. Eine Person macht langsame, möglichst lustige Bewegungen, die andere spiegelt sie. Nach 20 Sekunden wechselt ihr. Schafft ihr beide Runden, ohne aus dem Takt zu kommen?",
+      color: "#c2afff"
+    },
+    {
+      id: "freeze-frame", label: "Freeze frame", emoji: "🧊", category: "SHOWTIME",
+      title: "Baut das Standbild eines völlig wilden Moments.",
+      description: "Such dir zwei Gäste. Eine vierte Person gibt euch eine Szene, zum Beispiel Alien-Landung auf der Party oder verschlafener Schulbus. Ihr habt zehn Sekunden, um sie als gemeinsames Standbild darzustellen. Haltet die Pose fünf Sekunden!",
+      color: "#d4ff7f"
+    },
+    {
+      id: "forbidden-words", label: "Nicht Ja, nicht Nein", emoji: "🚫", category: "BATTLE MODE",
+      title: "Überlebe das Interview ohne Ja und Nein.",
+      description: "Lass dir von einem Gast 30 Sekunden lang schnelle Fragen stellen. Du darfst weder Ja noch Nein sagen und musst auf jede Frage antworten. Danach wechselt ihr. Wer hält länger durch?",
+      color: "#ffb48a"
+    },
+    {
+      id: "one-word-story", label: "Wort für Wort", emoji: "💬", category: "CREATIVE CLUB",
+      title: "Eine Party-Story, die niemand kontrolliert.",
+      description: "Bildet eine Dreiergruppe und erzählt reihum eine Geschichte – jede Person darf immer nur ein Wort sagen. Los geht's mit: An meinem 18. Geburtstag … Versucht, nach einer Minute ein gemeinsames Ende zu finden.",
+      color: "#c2afff"
+    },
+    {
+      id: "silent-lineup", label: "Silent order", emoji: "🤫", category: "TEAM CHALLENGE",
+      title: "Sortiert euch. Aber ohne ein Wort.",
+      description: "Hol vier Gäste dazu. Stellt euch nach eurem Geburtstagsmonat von Januar bis Dezember auf – ohne zu sprechen oder zu tippen. Gesten sind erlaubt. Danach verratet ihr eure Monate und prüft die Reihenfolge.",
+      color: "#d4ff7f"
+    },
+    {
+      id: "five-second-duel", label: "5-Sekunden-Duell", emoji: "⏱️", category: "BATTLE MODE",
+      title: "Drei Antworten. Fünf Sekunden.",
+      description: "Fordere einen Gast heraus. Eine dritte Person nennt euch abwechselnd Kategorien wie Eissorten, Games oder Dinge auf dieser Party. Nennt jeweils drei passende Antworten in fünf Sekunden. Spielt drei Runden pro Person.",
+      color: "#ffb48a"
+    },
+    {
+      id: "air-band", label: "Air band", emoji: "🎸", category: "MUSIC CLUB",
+      title: "Spielt den nächsten Refrain als Luftband.",
+      description: "Gründe mit zwei Gästen eine Luftband: Gitarre, Schlagzeug und Keyboard. Spielt beim nächsten Refrain zehn Sekunden lang zusammen, als wärt ihr der Headliner. Einigt euch vorher auf eine gemeinsame Schlusspose.",
+      color: "#c2afff"
+    },
+    {
+      id: "beat-chain", label: "Beat-Kette", emoji: "🥁", category: "MUSIC CLUB",
+      title: "Baut einen Beat, der immer länger wird.",
+      description: "Spielt zu dritt. Du startest mit einem Klatschen. Die nächste Person wiederholt den Beat und ergänzt ein Klatschen, Schnipsen oder Klopfen auf die eigenen Beine. Wie viele Runden schafft ihr, bevor jemand die Reihenfolge vergisst?",
+      color: "#d4ff7f"
+    },
+    {
+      id: "drawing-relay", label: "Kritzel-Staffel", emoji: "✏️", category: "CREATIVE CLUB",
+      title: "Ein Kunstwerk. Drei Leute. Kein Plan.",
+      description: "Öffne eine Zeichen-App oder nimm Papier und Stift. Ihr zeichnet zu dritt nacheinander je zehn Sekunden am selben Bild weiter, ohne euch abzusprechen. Lasst danach einen vierten Gast dem fertigen Kunstwerk einen Titel geben.",
+      color: "#ffb48a"
+    },
+    {
+      id: "object-ad", label: "Werbepause", emoji: "📺", category: "SHOWTIME",
+      title: "Macht einen Party-Gegenstand zum Luxusprodukt.",
+      description: "Wählt zu zweit einen gewöhnlichen Gegenstand in Sichtweite. Spielt einem Gast einen 20-Sekunden-Werbespot vor: Eine Person moderiert, die andere liefert Soundeffekte. Euer Publikum vergibt einen Fantasiepreis für das Produkt.",
+      color: "#c2afff"
+    },
+    {
+      id: "same-brain", label: "Same brain", emoji: "🧠", category: "CONNECT",
+      title: "Denkt ihr gerade dasselbe?",
+      description: "Spielt zu dritt: Eine Person nennt eine Kategorie, etwa Fast Food, Superhelden oder Urlaubsorte. Die anderen sagen auf drei gleichzeitig einen passenden Begriff. Schafft ihr in fünf Runden mindestens einen Treffer? Wechselt danach durch.",
+      color: "#d4ff7f"
+    },
+    {
+      id: "laugh-duel", label: "Pokerface", emoji: "😐", category: "BATTLE MODE",
+      title: "Wer lacht zuerst?",
+      description: "Fordere einen Gast zum Pokerface-Duell heraus. Schaut euch 20 Sekunden an und versucht, euch mit Grimassen zum Lachen zu bringen. Berühren ist tabu. Eine dritte Person stoppt die Zeit und kürt das stabilste Pokerface.",
+      color: "#ffb48a"
+    },
+    {
+      id: "birthday-time-capsule", label: "Level 21", emoji: "🚀", category: "BIRTHDAY SPECIAL",
+      title: "Eine Mini-Zeitkapsel für den 21. Geburtstag.",
+      description: "Überlegt euch zu zweit einen lustigen, netten Wunsch und eine gemeinsame Unternehmung für das Geburtstagskind bis zum 21. Geburtstag. Schreibt beides in eine Handy-Notiz oder auf Papier und zeigt es dem Geburtstagskind, sobald es Zeit hat.",
+      color: "#c2afff"
+    },
+    {
+      id: "human-machine", label: "Party-Maschine", emoji: "⚙️", category: "TEAM CHALLENGE",
+      title: "Werdet zur absurdesten Maschine der Party.",
+      description: "Hol zwei oder drei Gäste dazu. Du startest mit einer wiederholten Bewegung und einem Geräusch. Nacheinander steigt jede Person mit einem eigenen Move und Sound ein. Lasst eure Maschine zehn Sekunden laufen und gebt ihr einen Namen.",
+      color: "#d4ff7f"
+    },
+    {
+      id: "category-rally", label: "Wort-Rallye", emoji: "🏁", category: "BATTLE MODE",
+      title: "Wer hat das letzte Wort?",
+      description: "Wählt zu zweit eine Kategorie wie Serien, Snacks oder Musik-Acts. Nennt abwechselnd einen passenden Begriff, ohne Wiederholungen. Wer länger als fünf Sekunden überlegt, verliert die Runde. Spielt drei Runden mit neuen Kategorien.",
+      color: "#ffb48a"
     }
   ]
 };
+

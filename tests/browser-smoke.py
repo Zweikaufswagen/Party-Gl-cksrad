@@ -50,7 +50,7 @@ with sync_playwright() as p:
     page.wait_for_function('document.body.dataset.state === "ready"')
     page.set_viewport_size({'width':1440,'height':1050})
     page.screenshot(path=str(OUTPUT/'desktop.png'),full_page=True)
-    ok('Desktop ready state and 12 SVG segments',page.locator('#wheel g[data-task-id]').count()==12)
+    ok('Desktop ready state and 30 SVG segments',page.locator('#wheel g[data-task-id]').count()==30)
     for width in [320,360,390,768,1024,1440]:
         page.set_viewport_size({'width':width,'height':844})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'overflow {width}'
@@ -76,7 +76,7 @@ with sync_playwright() as p:
     completed,_=app(browser,data=completed_data)
     ok('Completion survives a fresh page',completed.locator('#completeButton').is_disabled() and completed.locator('#resultKicker').inner_text()=='MISSION ACCOMPLISHED')
     mutated,_=app(browser,data=data,patch='PARTY_CONFIG.tasks = PARTY_CONFIG.tasks.slice(0,2).map(t=>({...t,title:"NEUER TEXT"}))')
-    ok('Saved snapshot survives changed config',mutated.locator('#resultTitle').inner_text()==saved['task']['title'] and mutated.locator('#wheel g[data-task-id]').count()==12)
+    ok('Saved snapshot survives changed config',mutated.locator('#resultTitle').inner_text()==saved['task']['title'] and mutated.locator('#wheel g[data-task-id]').count()==30)
     invalid,_=app(browser,data={next(iter(data)):'broken-json'})
     ok('Corrupt saved draw fails closed',invalid.evaluate('document.body.dataset.state')=='blocked' and invalid.locator('#spinButton').is_disabled())
     blocked,_=app(browser,mode='read-error')
@@ -88,8 +88,8 @@ with sync_playwright() as p:
     reduced.locator('#spinButton').click()
     reduced.wait_for_function('document.body.dataset.state === "done"',timeout=2000)
     ok('Reduced-motion reveal works')
-    dense,_=app(browser,patch='PARTY_CONFIG.tasks=Array.from({length:24},(_,i)=>({...PARTY_CONFIG.tasks[i%12],id:"t"+i}))',width=320)
-    ok('24-task numbered wheel renders without overflow',dense.locator('#wheel g[data-task-id]').count()==24 and dense.evaluate('document.documentElement.scrollWidth<=innerWidth'))
+    dense,_=app(browser,patch='PARTY_CONFIG.tasks=Array.from({length:30},(_,i)=>({...PARTY_CONFIG.tasks[i%30],id:"t"+i}))',width=320)
+    ok('30-task numbered wheel renders without overflow',dense.locator('#wheel g[data-task-id]').count()==30 and dense.evaluate('document.documentElement.scrollWidth<=innerWidth'))
     xss,_=app(browser,patch='PARTY_CONFIG.name="<img src=x onerror=alert(1)>"')
     ok('Configured HTML is rendered as text, not markup',xss.locator('.brand img').count()==0 and '<img' in xss.locator('.brand').inner_text())
     ok('No uncaught JavaScript errors on guest flows',not errors and not restored_errors)
@@ -98,10 +98,13 @@ with sync_playwright() as p:
     editor.on('pageerror',lambda e:editor_errors.append(str(e)))
     editor.set_content(html('setup.html'))
     for name in ['config.js','core.js','vendor/qr.js','setup.js']:script(editor,name)
-    ok('Editor loads all configured tasks',editor.locator('.task-editor').count()==12)
+    ok('Editor loads all configured tasks',editor.locator('.task-editor').count()==30)
+    ok('Editor prevents more than 30 tasks',editor.locator('#addTask').is_disabled())
+    editor.locator('.task-editor').first.locator('.task-delete').click()
+    ok('Removing a task allows adding again',editor.locator('.task-editor').count()==29 and editor.locator('#addTask').is_enabled())
     editor.locator('#addTask').click()
     editor.locator('.task-editor').last.locator('[data-field="label"]').fill('Test-Mission')
-    ok('Adding and editing updates task summary',editor.locator('.task-editor').count()==13 and editor.locator('.task-editor').last.locator('.task-summary-name').inner_text()=='Test-Mission')
+    ok('Adding and editing updates task summary',editor.locator('.task-editor').count()==30 and editor.locator('.task-editor').last.locator('.task-summary-name').inner_text()=='Test-Mission')
     editor.evaluate('''() => {
       window.__exported = null;
       URL.createObjectURL = blob => {window.__exported=blob;return 'blob:test';};

@@ -6,7 +6,7 @@ HTML, CSS und JavaScript – kein Backend, keine Datenbank, keine Anmeldung, kei
 ## Enthalten
 
 - Mobiloptimierte Gästeseite mit animiertem SVG-Glücksrad, optionalem Sound und Konfetti.
-- Zwölf fertige Beispielaufgaben; zwei bis 24 Aufgaben sind konfigurierbar.
+- 30 fertige Party-Aufgaben für einen 18. Geburtstag; zwei bis 30 Aufgaben sind konfigurierbar.
 - Eine gespeicherte Ziehung pro Party und Browser auf derselben Website.
 - Das Ergebnis wird **vor** der Animation gespeichert. Ein Neuladen zeigt dieselbe Aufgabe.
 - Snapshot der Aufgabe und des Rads: spätere Aufgabenänderungen überschreiben keine alten Ergebnisse.
